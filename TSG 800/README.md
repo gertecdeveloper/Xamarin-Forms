@@ -1,0 +1,1 @@
+Projeto exemplo para Xamarin-Forms no Terminal Smart G800
