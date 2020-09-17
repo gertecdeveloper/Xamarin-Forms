@@ -31,6 +31,7 @@ namespace GertecXamarinForms.Droid.Impressao
         // Statics
         private static bool isPrintInit = false;
 
+        private ICL icl;
         private IGEDI iGedi;
         private IPRNTR iPrintr;
         private GEDI_PRNTR_st_StringConfig stringConfig;
@@ -51,38 +52,18 @@ namespace GertecXamarinForms.Droid.Impressao
             startGediGPOS700();
         }
 
-        //  TSG 800
-        // public GertecPrinter(Activity act)
-        // {
-        //     this.mainActivity = act;
-        //     startGediTSG800();
-        // }
-
+        
         public void startGediGPOS700()
         {
             new Thread(new ThreadStart(() =>
             {
                 GEDI.Init(this.mainContext);
                 this.iGedi = GEDI.GetInstance(this.mainContext);
+                this.icl = iGedi.CL;
                 this.iPrintr = iGedi.PRNTR;
                 Thread.Sleep(100);
             })).Start();
         }
-
-        /*
-        public void startGediTSG800()
-        {
-            new Thread(new ThreadStart(() =>
-            {
-                #if __G800__
-                    this.iGedi = new Gedi(this.mainActivity);
-                    this.iGedi = GEDI.GetInstance(this.mainActivity);
-                    this.iPrintr = iGedi.PRNTR;
-                    Thread.Sleep(250);
-                #endif
-            })).Start();
-        }
-        */
 
         private void ImpressoraInit()
         {
@@ -90,6 +71,7 @@ namespace GertecXamarinForms.Droid.Impressao
             {
                 if (this.iPrintr != null && !isPrintInit)
                 {
+                    this.icl.PowerOff();  // Desligar Módulo NFC - comando Mandatório antes de enviar comandos para a impressora.
                     this.iPrintr.Init();
                     isPrintInit = true;
                     getStatusImpressora();
