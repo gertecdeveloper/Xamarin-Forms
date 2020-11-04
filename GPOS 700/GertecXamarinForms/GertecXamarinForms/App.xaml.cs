@@ -9,8 +9,10 @@ namespace GertecXamarinForms
     {
         public App()
         {
+            //Device.SetFlags(new string[] { "RadioButton_Experimental" });
             InitializeComponent();
-
+            //Device.SetFlags(new string[] { "RadioButton_Experimental" });
+            
             MainPage = new NavigationPage(new MainPage());
         }
 

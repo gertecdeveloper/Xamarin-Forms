@@ -25,7 +25,7 @@
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <AndroidKeyStore>true</AndroidKeyStore>
-    <AndroidSigningKeyStore>C:\Projetos\XamarinForms\projetoGertec\xamarin-forms\Chaves\Development_GertecDeveloper_CustomerAPP.keystore</AndroidSigningKeyStore>
+    <AndroidSigningKeyStore>..\..\Chaves\Development_GertecDeveloper_CustomerAPP.keystore</AndroidSigningKeyStore>
     <AndroidSigningStorePass>Development@GertecDeveloper2018</AndroidSigningStorePass>
     <AndroidSigningKeyPass>Development@GertecDeveloper2018</AndroidSigningKeyPass>
     <AndroidSigningKeyAlias>developmentgertecdeveloper_customerapp</AndroidSigningKeyAlias>
@@ -33,9 +33,9 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>portable</DebugType>
-    <Optimize>False</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
+    <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
@@ -45,7 +45,9 @@
     <BundleAssemblies>false</BundleAssemblies>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-    <AndroidSigningKeyStore>D:\Projetos\GitLabUEA\xamarin_forms_G700\Chaves\Development_GertecDeveloper_CustomerAPP.keystore</AndroidSigningKeyStore>
+    <AndroidSupportedAbis>
+    </AndroidSupportedAbis>
+    <AndroidUseAapt2>true</AndroidUseAapt2>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,22 +63,39 @@
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <BundleAssemblies>false</BundleAssemblies>
     <MandroidI18n />
+    <AndroidDexTool>dx</AndroidDexTool>
+    <AndroidUseAapt2>true</AndroidUseAapt2>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <DefineConstants>
+    </DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
-    <Reference Include="payment_1.14.13.190715">
-      <HintPath>..\..\payment_1.14.13.190715.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors" />
+    <Reference Include="GPOS700">
+      <HintPath>..\..\Gedi-payment.dll</HintPath>
+    </Reference>
+    <Reference Include="SatLib">
+      <HintPath>..\..\SatLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="FSharp.Compiler.Service">
+      <Version>36.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Json.Net">
+      <Version>1.0.23</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Impressao\ConfigPrint.cs" />
@@ -85,8 +104,25 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SAT\GlobalValues.cs" />
+    <Compile Include="SAT\PagesSat\Alterar.cs" />
+    <Compile Include="SAT\PagesSat\Associar.cs" />
+    <Compile Include="SAT\PagesSat\Ativacao.cs" />
+    <Compile Include="SAT\PagesSat\Ferramentas.cs" />
+    <Compile Include="SAT\PagesSat\Rede.cs" />
+    <Compile Include="SAT\ServiceSat\OperacaoSat.cs" />
+    <Compile Include="SAT\ServiceSat\RetornoSat.cs" />
+    <Compile Include="SAT\ServiceSat\SatFunctions.cs" />
+    <Compile Include="SAT\PagesSat\Teste.cs" />
+    <Compile Include="SAT\ServiceSat\SatUtils.cs" />
+    <Compile Include="Services\Impressao.cs" />
     <Compile Include="Services\NfcID.cs" />
     <Compile Include="Services\NfcGedi.cs" />
+    <Compile Include="TEF\Mask.cs" />
+    <Compile Include="TEF\MoneyTextWatcher.cs" />
+    <Compile Include="TEF\OperacaoRetorno.cs" />
+    <Compile Include="TEF\Tef.cs" />
+    <Compile Include="TEF\Venda.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\fonts\VECTRA.otf" />
@@ -171,5 +207,32 @@
   <ItemGroup>
     <AndroidResource Include="Resources\xml\nfc_tech_filter.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\pos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Tef.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Imagem1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\Imagem1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\Imagem1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_sat.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\arq_venda.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\arq_cancelamento.xml" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

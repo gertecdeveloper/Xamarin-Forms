@@ -13,8 +13,7 @@ using System.Text;
 namespace GertecXamarinForms.Droid.Services
 {
     [Activity(Label = "NfcID", Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
-    /* Aqui nessa parte foi feito o seguinte, ao contrario de fazer a chamada no mainActivity que da 
-     errado, eu to criei uma nova atividade e faço ela ser startada pela main*/
+
     public class NfcID : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         public TextView txtLeitura;

@@ -35,7 +35,7 @@
     <ContentPage.Content>
         <StackLayout Padding="5">
             <StackLayout Spacing="0">
-                <Label x:Name="lblVersao" Text="Funções Impressao G700/G800" VerticalOptions="Start" HorizontalOptions="Center" 
+                <Label x:Name="lblVersao" Text="Funções Impressão G700/G800" VerticalOptions="Start" HorizontalOptions="Center" 
                         TextColor="Gray" FontSize="24" FontAttributes="Bold" />
                 <Button Text="Status Impressora" Clicked="btnStatusImpressora"/>
                 <Entry x:Name="MensagemEntry" Placeholder="Escreva a sua mensagem" Margin="10, 0" />

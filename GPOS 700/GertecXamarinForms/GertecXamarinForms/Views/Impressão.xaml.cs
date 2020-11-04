@@ -20,8 +20,8 @@ namespace GertecXamarinForms.Views
             NavigationPage.SetHasNavigationBar(this, false);
 
             //Metodo para exibir o modelo da máquina sendo utilizada no titulo
-            string modelo = DependencyService.Get<IImpressao>().iniLoadModelo();
-            lblVersao.Text = modelo;
+            //string modelo = DependencyService.Get<IImpressao>().iniLoadModelo();
+            //lblVersao.Text = modelo;
 
             pckFont.Items.Add("DEFAULT");
             pckFont.Items.Add("MONOSPACE");
@@ -134,6 +134,7 @@ namespace GertecXamarinForms.Views
             {
                 checkBoxCentralizado.IsChecked = false;
                 checkBoxDireita.IsChecked = false;
+                checkBoxEsquerda.IsChecked = true;
             }
         }
 
@@ -143,6 +144,7 @@ namespace GertecXamarinForms.Views
             {
                 checkBoxEsquerda.IsChecked = false;
                 checkBoxDireita.IsChecked = false;
+                checkBoxCentralizado.IsChecked = true;
             }
         }
 
@@ -152,7 +154,7 @@ namespace GertecXamarinForms.Views
             {
                 checkBoxCentralizado.IsChecked = false;
                 checkBoxEsquerda.IsChecked = false;
-
+                checkBoxDireita.IsChecked = true;
             }
         }
 

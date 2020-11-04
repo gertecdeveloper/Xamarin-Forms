@@ -41,6 +41,14 @@ namespace GertecXamarinForms.Views
         {
             DependencyService.Get<INfcId>().NfcID();
         }
-
+        private void tef(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Tef());            
+        }
+        private void sat(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MenuSat());
+            //System.Console.WriteLine("Teste seleção Sat");            
+        }
     }
 }

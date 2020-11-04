@@ -27,7 +27,7 @@
 
     <StackLayout Spacing="20" Padding="2, 30">
         <Image Source="gertec.png" HorizontalOptions="Center" VerticalOptions="Start" WidthRequest = "400" />
-        <Label x:Name="lblVersao" Text="Xamarin Forms - RC03" HorizontalOptions="Center" FontSize="25" FontAttributes="Bold"/>
+        <Label x:Name="lblVersao" Text="Xamarin Forms - 1.0.0" HorizontalOptions="Center" FontSize="25" FontAttributes="Bold"/>
 
         <TableView Intent="Form" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="315" HasUnevenRows="True">
             <TableView.Root>
@@ -60,6 +60,18 @@
                         <StackLayout Style="{StaticResource MenuStackLayout}" Spacing="95"  >
                             <Image Source="nfc1.png"  />
                             <Label Style="{StaticResource MenuLabel}" Text="NFC Id" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Tapped="tef" Height="78">
+                        <StackLayout Style="{StaticResource MenuStackLayout}" Spacing="95"  >
+                            <Image Source="pos.png"  />
+                            <Label Style="{StaticResource MenuLabel}" Text="TEF" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Tapped="sat" Height="78">
+                        <StackLayout Style="{StaticResource MenuStackLayout}" Spacing="95"  >
+                            <Image Source="icon_sat.png"  />
+                            <Label Style="{StaticResource MenuLabel}" Text="SAT" />
                         </StackLayout>
                     </ViewCell>
                 </TableSection>

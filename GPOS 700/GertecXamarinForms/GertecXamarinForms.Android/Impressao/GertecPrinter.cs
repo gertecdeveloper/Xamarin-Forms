@@ -25,24 +25,25 @@ namespace GertecXamarinForms.Droid.Impressao
     {
         // Defines
         private const string IMPRESSORA_ERRO = "Impressora com erro.";
-
+        
         private string modelo = CrossDeviceInfo.Current.Model;
 
         // Statics
         private static bool isPrintInit = false;
 
-        private ICL icl;
         private IGEDI iGedi;
         private IPRNTR iPrintr;
         private GEDI_PRNTR_st_StringConfig stringConfig;
         private GEDI_PRNTR_st_PictureConfig pictureConfig;
         private GEDI_PRNTR_e_Status status;
 
+        private ICL icl = null;
+
         private ConfigPrint configPrint;
         private Typeface typeface;
 
         // Thread starGedi;
-
+        
         /*private Activity mainActivity;*/
         private Context mainContext;
 
@@ -52,26 +53,47 @@ namespace GertecXamarinForms.Droid.Impressao
             startGediGPOS700();
         }
 
-        
+        //  TSG 800
+        // public GertecPrinter(Activity act)
+        // {
+        //     this.mainActivity = act;
+        //     startGediTSG800();
+        // }
+
         public void startGediGPOS700()
         {
             new Thread(new ThreadStart(() =>
             {
                 GEDI.Init(this.mainContext);
                 this.iGedi = GEDI.GetInstance(this.mainContext);
-                this.icl = iGedi.CL;
+                icl = iGedi.CL;
                 this.iPrintr = iGedi.PRNTR;
                 Thread.Sleep(100);
             })).Start();
         }
 
-        private void ImpressoraInit()
+        /*
+        public void startGediTSG800()
+        {
+            new Thread(new ThreadStart(() =>
+            {
+                #if __G800__
+                    this.iGedi = new Gedi(this.mainActivity);
+                    this.iGedi = GEDI.GetInstance(this.mainActivity);
+                    this.iPrintr = iGedi.PRNTR;
+                    Thread.Sleep(250);
+                #endif
+            })).Start();
+        }
+        */
+
+        public void ImpressoraInit()
         {
             try
             {
                 if (this.iPrintr != null && !isPrintInit)
                 {
-                    this.icl.PowerOff();  // Desligar Módulo NFC - comando Mandatório antes de enviar comandos para a impressora.
+                    icl.PowerOff(); // Desligar Módulo NFC - comando Mandatório antes de enviar comandos para a impressora.
                     this.iPrintr.Init();
                     isPrintInit = true;
                     getStatusImpressora();
@@ -188,7 +210,7 @@ namespace GertecXamarinForms.Droid.Impressao
 
                 if (barcodeFormat.Equals("CODE_128"))
                 {
-                    bitMatrix = multiFormatWriter.encode(texto, BarcodeFormat.CODE_128, height, width); 
+                    bitMatrix = multiFormatWriter.encode(texto, BarcodeFormat.CODE_128, height, width);
                 }
                 else if (barcodeFormat.Equals("EAN_8"))
                 {
@@ -475,7 +497,7 @@ namespace GertecXamarinForms.Droid.Impressao
             return true;
         }
 
-        private string traduzStatusImpressora(GEDI_PRNTR_e_Status status)
+        public string traduzStatusImpressora(GEDI_PRNTR_e_Status status)
         {
 
             string retorno;
