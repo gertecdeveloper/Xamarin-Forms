@@ -5,7 +5,6 @@ using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using GertecXamarinForms.Controls;
-
 namespace GertecXamarinForms.Views
 {
 
@@ -37,7 +36,12 @@ namespace GertecXamarinForms.Views
         {
             DependencyService.Get<INfc>().Nfc();
         }
-        
+        private void sat(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MenuSat());
+            //System.Console.WriteLine("Teste seleção Sat");            
+        }
+
 
     }
 }

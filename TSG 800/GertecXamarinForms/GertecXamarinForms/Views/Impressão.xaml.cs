@@ -25,8 +25,9 @@ namespace GertecXamarinForms.Views
 
             pckFont.Items.Add("DEFAULT");
             pckFont.Items.Add("MONOSPACE");
-            pckFont.Items.Add("SANS SERIF");
-            pckFont.Items.Add("SERIF");
+            pckFont.Items.Add("SANS SERIF");            
+            pckFont.Items.Add("SERIF"); 
+            pckFont.Items.Add("VECTRA.otf");
             pckFont.SelectedIndex = 0;
 
             pckSize.Items.Add("10");
@@ -134,6 +135,7 @@ namespace GertecXamarinForms.Views
             {
                 checkBoxCentralizado.IsChecked = false;
                 checkBoxDireita.IsChecked = false;
+                checkBoxEsquerda.IsChecked = true;
             }
         }
 
@@ -143,6 +145,7 @@ namespace GertecXamarinForms.Views
             {
                 checkBoxEsquerda.IsChecked = false;
                 checkBoxDireita.IsChecked = false;
+                checkBoxCentralizado.IsChecked = true;
             }
         }
 
@@ -152,7 +155,7 @@ namespace GertecXamarinForms.Views
             {
                 checkBoxCentralizado.IsChecked = false;
                 checkBoxEsquerda.IsChecked = false;
-
+                checkBoxDireita.IsChecked = true;
             }
         }
 

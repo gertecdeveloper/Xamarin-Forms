@@ -128,7 +128,7 @@ namespace GertecXamarinForms.Views
             overlay = new ZXingDefaultOverlay
             {
                 TopText = "Aproxime do código para leitura",
-                BottomText = "O código sera lido automaticamente",
+                BottomText = "O código será lido automaticamente",
                 ShowFlashButton = zXing.HasTorch
             };
 

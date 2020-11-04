@@ -1,25 +1,28 @@
-﻿using Android.App;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Android.App;
 using Android.Content;
-using Android.Graphics;
+using Android.OS;
 using BR.Com.Gertec.Gedi;
 using BR.Com.Gertec.Gedi.Enums;
 using BR.Com.Gertec.Gedi.Exceptions;
 using BR.Com.Gertec.Gedi.Interfaces;
 using BR.Com.Gertec.Gedi.Structs;
-using Plugin.DeviceInfo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using ZXing;
-using ZXing.Mobile;
-using ZXing.Common;
-
-using Xamarin.Forms;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
 using BR.Com.Gertec.Gedi.Impl;
+using ZXing;
+using ZXing.Common;
+using System.Threading;
+using Android.Graphics;
+using Plugin.DeviceInfo;
+using GertecXamarinForms.Droid.Impressao;
+using ZXing.Mobile;
 
-namespace GertecXamarinForms.Droid.Impressao
+namespace GertecXamarinAndroid.Impressao
 {
     public class GertecPrinter : IGertecPrinter
     {
@@ -238,7 +241,7 @@ namespace GertecXamarinForms.Droid.Impressao
 
                 if (barcodeFormat.Equals("CODE_128"))
                 {
-                    bitMatrix = multiFormatWriter.encode(texto, BarcodeFormat.CODE_128, height, width); 
+                    bitMatrix = multiFormatWriter.encode(texto, BarcodeFormat.CODE_128, height, width);
                 }
                 else if (barcodeFormat.Equals("EAN_8"))
                 {
@@ -538,7 +541,7 @@ namespace GertecXamarinForms.Droid.Impressao
                     break;
 
                 default:
-                    this.typeface = Typeface.CreateFromAsset(this.mainActivity.Assets, configPrint.Fonte);
+                    this.typeface = Typeface.CreateFromAsset(this.mainActivity.Assets, $"fonts/{configPrint.Fonte}");
                     break;
             }
 

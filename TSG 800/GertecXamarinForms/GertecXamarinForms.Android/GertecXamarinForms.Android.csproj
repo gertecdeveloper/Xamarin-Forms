@@ -25,7 +25,7 @@
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <AndroidKeyStore>true</AndroidKeyStore>
-    <AndroidSigningKeyStore>C:\Projetos\XamarinForms\projetoGertec\xamarinForms800\Chaves\Development_GertecDeveloper_CustomerAPP.keystore</AndroidSigningKeyStore>
+    <AndroidSigningKeyStore>..\..\Chaves\Development_GertecDeveloper_CustomerAPP.keystore</AndroidSigningKeyStore>
     <AndroidSigningStorePass>Development@GertecDeveloper2018</AndroidSigningStorePass>
     <AndroidSigningKeyPass>Development@GertecDeveloper2018</AndroidSigningKeyPass>
     <AndroidSigningKeyAlias>developmentgertecdeveloper_customerapp</AndroidSigningKeyAlias>
@@ -45,7 +45,8 @@
     <BundleAssemblies>false</BundleAssemblies>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-    <AndroidKeyStore>false</AndroidKeyStore>
+    <AndroidSupportedAbis>
+    </AndroidSupportedAbis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -73,6 +74,9 @@
     <Reference Include="TSG800">
       <HintPath>..\..\TSG800.dll</HintPath>
     </Reference>
+    <Reference Include="SatLib">
+      <HintPath>..\..\SatLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
@@ -82,9 +86,21 @@
     <Compile Include="Impressao\ConfigPrint.cs" />
     <Compile Include="Impressao\GertecPrinter.cs" />
     <Compile Include="Impressao\IGertecPrinter.cs" />
+    <Compile Include="Impressao\Impressao.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SAT\GlobalValues.cs" />
+    <Compile Include="SAT\PagesSat\Alterar.cs" />
+    <Compile Include="SAT\PagesSat\Associar.cs" />
+    <Compile Include="SAT\PagesSat\AtivacaoSat.cs" />
+    <Compile Include="SAT\PagesSat\Ferramentas.cs" />
+    <Compile Include="SAT\PagesSat\Rede.cs" />
+    <Compile Include="SAT\PagesSat\Teste.cs" />
+    <Compile Include="SAT\ServiceSat\OperacaoSat.cs" />
+    <Compile Include="SAT\ServiceSat\RetornoSat.cs" />
+    <Compile Include="SAT\ServiceSat\SatFunctions.cs" />
+    <Compile Include="SAT\ServiceSat\SatUtils.cs" />
     <Compile Include="Services\Fragment\NFCReadFragment.cs" />
     <Compile Include="Services\Fragment\NFCWriteFragment.cs" />
     <Compile Include="Services\Fragment\NFCWriteReadFragment.cs" />
@@ -197,6 +213,18 @@
     <AndroidResource Include="Resources\layout\fragment_forceteste.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Imagem1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_sat.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\arq_cancelamento.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\arq_venda.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
