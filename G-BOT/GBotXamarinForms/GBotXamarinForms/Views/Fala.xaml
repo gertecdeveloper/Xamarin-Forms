@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GBotXamarinForms.Fala">
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="80*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Fala G-BOT" FontSize="Title" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+        <StackLayout  Margin="10" Grid.Column="0" Grid.Row="1">
+            <Button Text="FRASE 1" Clicked="Button_Clicked"/>
+            <Button Text="FRASE 2" Clicked="Button_Clicked_1" />
+            <Button Text="FRASE 3" Clicked="Button_Clicked_2"/>
+            <Button Text="FRASE DIGITADA" Clicked="Button_Clicked_3" />
+        </StackLayout>
+
+        <StackLayout Grid.Column="1" Grid.Row="1">
+            <Label Text="Digite a sua frase aqui:" />
+            <Entry x:Name="input_frase" Keyboard="Text" />
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

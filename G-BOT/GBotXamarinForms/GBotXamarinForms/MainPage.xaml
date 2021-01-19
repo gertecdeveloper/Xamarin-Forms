@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GBotXamarinForms.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="100*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*" />
+            <ColumnDefinition Width="60*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackLayout Grid.Column="0" VerticalOptions="Center">
+            <Image Source="gertec_logo.png" VerticalOptions="Center" />
+            <Label Text="Xamarin Forms - 1.0.0 - G-BOT" FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+
+        <StackLayout Grid.Column="1" Margin="30"  VerticalOptions="CenterAndExpand" >
+            <TableView Intent="Form" RowHeight="60">        
+                 <TableRoot >
+                    <TableSection >
+                        <ViewCell Tapped="ViewCell_Tapped">
+                            <StackLayout VerticalOptions="Start"  Orientation="Horizontal"  >
+                                <Image Source="barcode.png"  />
+                                <Label Text="Código de Barras" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  />
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell Tapped="ViewCell_Tapped_1" >
+                            <StackLayout VerticalOptions="Start" Orientation="Horizontal"  >
+                                <Image Source="nfc2.png"  />
+                                <Label Text="NFC - NDEF" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  />
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell  Tapped="ViewCell_Tapped_2">
+                            <StackLayout VerticalOptions="Start" Orientation="Horizontal"  >
+                                <Image Source="sensor.png"  />
+                                <Label Text="Sensor de Presença" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  />
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell Tapped="ViewCell_Tapped_3" >
+                            <StackLayout VerticalOptions="Start" Orientation="Horizontal"  >
+                                <Image Source="speaker.png"  />
+                                <Label Text="Fala G-BOT" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  />
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell Tapped="ViewCell_Tapped_4" >
+                            <StackLayout VerticalOptions="Start" Orientation="Horizontal"  >
+                                <Image Source="kiosk.png"  />
+                                <Label Text="Modo Quiosque" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  />
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell Tapped="ViewCell_Tapped_5" >
+                            <StackLayout VerticalOptions="Start" Orientation="Horizontal"  >
+                                <Image Source="tef.png"  />
+                                <Label Text="TEF" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  />
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell  Tapped="ViewCell_Tapped_6">
+                            <StackLayout VerticalOptions="Start" Orientation="Horizontal"  >
+                                <Image Source="icon_sat.jpeg"  />
+                                <Label Text="SAT" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  />
+                            </StackLayout>
+                        </ViewCell>
+
+                    </TableSection>
+                </TableRoot>
+
+            </TableView>
+
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>

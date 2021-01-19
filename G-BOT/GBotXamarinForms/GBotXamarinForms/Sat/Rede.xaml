@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GBotXamarinForms.Sat.Rede">
+    <ContentPage.Content>
+
+        <Grid Padding="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+
+            <Grid Grid.Row="0" Grid.Column="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Text="Código de Ativação" FontSize="13" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Grid.Row="0" Grid.Column="1"  x:Name="txtCodAtivacao" Text="" Keyboard="Text"/>
+
+                <Label  Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" Text="Tipo de rede" FontSize="13" TextColor="Black" FontAttributes="Bold"/>
+                <Picker Grid.Row="1" Grid.Column="1" SelectedIndexChanged="tipoRede_SelectedIndexChanged" x:Name="tipoRede" Title="Selecione" />
+
+                <Label Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" Text="IP SAT" FontSize="13" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Grid.Row="2" Grid.Column="1"  x:Name="txtIp" Text="" Keyboard="Numeric"/>
+
+                <Label Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" Text="Máscara" FontSize="13" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Grid.Row="3" Grid.Column="1"  x:Name="txtMascara" Text="" Keyboard="Numeric"/>
+
+                <Label Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center" Text="Gateway" FontSize="13" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Grid.Row="4" Grid.Column="1"  x:Name="txtGateway" Text="" FontSize="Small" Keyboard="Numeric"/>
+
+
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label  Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Text="DNS" FontSize="13" TextColor="Black" FontAttributes="Bold"/>
+                <Picker Grid.Row="0" Grid.Column="1" SelectedIndexChanged="optDns_SelectedIndexChanged" x:Name="optDns" Title="Selecione" />
+
+                <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" Text="DNS 1" FontSize="13" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Grid.Row="1" Grid.Column="1"  x:Name="txtDns" Text="" Keyboard="Numeric"/>
+
+                <Label Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" Text="DNS 2" FontSize="13" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Grid.Row="2" Grid.Column="1"  x:Name="txtDns2" Text="" Keyboard="Numeric"/>
+                
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label  Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Text="Proxy" FontSize="13" TextColor="Black" FontAttributes="Bold"/>
+                <Picker Grid.Row="0" Grid.Column="1" SelectedIndexChanged="optProxy_SelectedIndexChanged" x:Name="optProxy" Title="Selecione" />
+
+                <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" Text="Proxy IP" FontSize="13" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Grid.Row="1" Grid.Column="1"  x:Name="txtProxyIp" Text="" Keyboard="Numeric"/>
+
+                <Label Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" Text="Porta" FontSize="13" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Grid.Row="2" Grid.Column="1"  x:Name="txtPorta" Text="" Keyboard="Numeric"/>
+
+                <Label Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" Text="User" FontSize="13" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Grid.Row="3" Grid.Column="1"  x:Name="txtUser" Text="" Keyboard="Text"/>
+
+                <Label Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center" Text="Password" FontSize="13" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Grid.Row="4" Grid.Column="1"  x:Name="txtPassword" Text="" Keyboard="Text"/>
+
+
+            </Grid>
+
+            <StackLayout Orientation="Vertical"  Grid.Column="1" Grid.Row="1">
+                <Button Text="Enviar"
+                        FontAttributes="Bold"
+                        Clicked="btnConfigurarRedeSat">
+                </Button>
+            </StackLayout>
+
+
+
+        </Grid>
+
+
+    </ContentPage.Content>
+
+
+
+</ContentPage>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GBotXamarinForms.NFC">
+
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="80*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="NFC - NDEF" FontSize="Title" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+        <StackLayout  Margin="10" Grid.Column="0" Grid.Row="1">
+            <Entry x:Name="entry_mensagem" Keyboard="Text" Placeholder="Digite aqui sua Mensagem"/>
+            <Button Text="GRAVAR NO CARTÃO" Clicked="Button_Clicked_Gravar"/>
+            <Button Text="LER CARTÃO" Clicked="Button_Clicked_Ler"/>
+            <Button Text="FORMATAR CARTÃO" Clicked="Button_Clicked_Formatar"/>
+            <Button Text="TESTE LEITURA/GRAVAÇÃO"  Clicked="Button_Clicked_Gravar_Ler"/>
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" Grid.Column="1" >
+            <Label Text="{Binding LabelTitulo}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+            <Image Source="ic_nfc.png" />
+            <Label Text="{Binding LabelResposta}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>

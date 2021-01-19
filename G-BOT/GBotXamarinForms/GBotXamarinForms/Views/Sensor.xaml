@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GBotXamarinForms.Sensor">
+
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="80*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*" />
+            <ColumnDefinition Width="80*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Sensor de Presença" FontSize="Title" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+        <StackLayout  Margin="10" Grid.Column="0" Grid.Row="1">
+            <Button Text="INICIAR SERVIÇO" Clicked="Button_Clicked"/>
+            <Button Text="PARAR SERVIÇO" Clicked="Button_Clicked_1"/>
+        </StackLayout>
+
+        <ListView x:Name="listResponta" Grid.Row="1" Grid.Column="1" SelectionMode="None" HasUnevenRows="True"  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="20,0,20,0" VerticalOptions="Center">
+                           
+                                <Label Text="{Binding .}" 
+                                     FontSize="Small"
+                                     LineBreakMode="WordWrap"                                     
+                                     MaxLines="10"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+
+</ContentPage>

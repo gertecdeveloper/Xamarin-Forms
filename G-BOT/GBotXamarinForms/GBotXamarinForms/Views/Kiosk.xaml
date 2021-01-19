@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GBotXamarinForms.Kiosk">
+
+    <StackLayout VerticalOptions="Center">
+        <Label  Text="{Binding LabelStatusKioskMode}" FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+         
+        <Grid Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/> 
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="START KIOSK MODE" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button Text="STOP KIOSK MODE" Grid.Column="1" Clicked="Button_Clicked_1"/>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

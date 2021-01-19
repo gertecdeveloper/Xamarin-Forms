@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GBotXamarinForms.Sat.TestesSat">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="50*" />
+            </Grid.ColumnDefinitions>
+
+          
+
+
+        
+        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" WidthRequest="400" Grid.Column="0" Grid.Row="0">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Código de Ativação SAT:" VerticalOptions="Center" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
+                    <Entry x:Name="codAtivacao" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" VerticalOptions="Center" >
+                    <Button Text="Consultar sat"
+                        FontAttributes="Bold"
+                        Clicked="btnContultarSat">
+                    </Button>
+
+                    <Button Text="Status Operacional"
+                        FontAttributes="Bold"
+                        Clicked="btnStatusSat">
+                    </Button>
+
+                    <Button Text="Teste Fim a Fim"                        
+                        FontAttributes="Bold"
+                        Clicked="btnTesteSat">
+                    </Button>
+
+                    <Button Text="Enviar dados de Venda"                        
+                        FontAttributes="Bold"
+                        Clicked="btnEnviarVenda">
+                    </Button>
+
+                    <Button Text="Cancelar venda"                        
+                        FontAttributes="Bold"
+                        Clicked="btnCancelarVenda">
+                    </Button>
+
+                    <Button Text="Consultar sessão"                        
+                        FontAttributes="Bold"
+                        Clicked="btnConsultarSessao">
+                    </Button>
+                </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="1" Margin="20">
+                <Label  Text="Retorno SAT" VerticalOptions="Center" HorizontalOptions="Center" 
+                        TextColor="Black" FontSize="Large"  FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                <ListView x:Name="listResponta"  SelectionMode="None" HasUnevenRows="True"  >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="20,5,20,5" VerticalOptions="Center">
+
+                                    <Label Text="{Binding .}" 
+                                     FontSize="Small"
+                                     LineBreakMode="WordWrap"
+                                     VerticalTextAlignment="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
